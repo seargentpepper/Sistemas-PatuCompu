@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser Icons (Duck Aesthetic) -->
+    <link rel="apple-touch-icon" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f986/512.png">
+    <link rel="icon" type="image/png" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f986/512.png">
+    <link rel="shortcut icon" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f986/512.png">
+
+    <title>Patu Compu | Optimización y Reparación de Computadoras en Villahermosa</title>
+
+    <!-- Performance Preconnects -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <!-- Core SEO Meta Tags -->
+    <meta name="description"
+        content="Especialista en mantenimiento, diagnóstico y optimización de computadoras (Windows & Mac) en Villahermosa, Tabasco. Más de 20 años de experiencia. Precios económicos y tiempo express. Derecho a reparar.">
+    <meta name="keywords"
+        content="reparación de computadoras, optimización PC, mantenimiento Mac, soporte técnico Villahermosa, técnico en informática Tabasco, instalar SSD, armar PC gamer, patu compu">
+    <meta name="author" content="Jose (Patu Compu)">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph (Facebook, LinkedIn, iMessage) -->
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Patu Compu | Soberanía tecnológica en tus manos">
+    <meta property="og:description"
+        content="Dale una vida nueva a tu equipo actual. Optimización experta de hardware y software por una fracción de lo que cuesta una computadora nueva. Ubicados en Villahermosa.">
+    <meta property="og:url" content="https://patucompu.com.mx"> <!-- Replace with actual domain -->
+    <meta property="og:site_name" content="Patu Compu">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter/X Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patu Compu | Experto en Optimización de PC & Mac">
+    <meta name="twitter:description"
+        content="Expertos en el 'Derecho a Reparar'. Sistemas rápidos y confiables sin gastar en hardware nuevo. Atención express y económica en Villahermosa.">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630&q=80">
+
+    <!-- Geo Meta Tags for Local SEO -->
+    <meta name="geo.region" content="MX-TAB">
+    <meta name="geo.placename" content="Villahermosa">
+    <meta name="geo.position" content="17.959495;-92.971380">
+    <meta name="ICBM" content="17.959495, -92.971380">
+
+    <!-- Schema.org Markup for Google Local Source -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ComputerStore",
+      "name": "Sistemas Patu Compu",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "@id": "https://patucompu.com.mx",
+      "url": "https://patucompu.com.mx",
+      "telephone": "+525550985327",
+      "priceRange": "$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Dracena, Fracc Palma Real",
+        "addressLocality": "Villahermosa",
+        "addressRegion": "TAB",
+        "postalCode": "86280",
+        "addressCountry": "MX"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.959495,
+        "longitude": -92.971380
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      "sameAs": [
+        "https://wa.me/525550985327"
+      ]
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlue: '#007BFF',
+                        signalYellow: '#FFD700',
+                        metalGrey: '#8E8E93',
+                        carbon: '#1C1C1E',
+                        whiteSmoke: '#F2F2F7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="antialiased font-sans">
+
+    <!-- Plan de Estructura: 
+         - Branding: Patu Compu (Patos + Tecnología).
+         - Navegación: Cambiado a .exe para reflejar un ejecutable de sistema.
+         - Hero: Log de terminal interactivo y título de alto impacto.
+         - Filosofía: Derecho a Reparar con slogan actualizado.
+         - Servicios: Estructura profesional centrada en software y hardware.
+         - Diagnóstico: Visualización de rendimiento con Chart.js.
+         - Localización: Mapa con coordenadas exactas de Villahermosa.
+    -->
+
+    <nav class="bg-carbon text-white sticky top-0 z-50 border-b border-metalGrey shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Desktop Layout -->
+            <div class="hidden md:flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <span class="text-2xl md:text-3xl font-mono font-bold text-signalYellow flex items-center gap-2">
+                        <span class="float-duck">🦆</span> PATU_COMPU<span class="text-techBlue">.exe</span>
+                    </span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#philosophy" class="hover:text-signalYellow font-medium transition-colors">Filosofía</a>
+                    <a href="#services" class="hover:text-signalYellow font-medium transition-colors">Servicios</a>
+                    <a href="#diagnostics" class="hover:text-signalYellow font-medium transition-colors">Rendimiento</a>
+                    <a href="#location" class="hover:text-signalYellow font-medium transition-colors">Localización</a>
+                    <div id="theme-toggle" class="theme-toggle-btn" title="Día / Tarde / Noche">
+                        <span id="theme-icon">🌙</span>
+                    </div>
+                    <div id="aesthetic-toggle" class="aesthetic-toggle-btn" title="Estética: Default ↔ Experimental">
+                        <span class="aesthetic-label"
+                            style="font-size:10px;font-weight:800;letter-spacing:0.5px">STD</span>
+                    </div>
+                    <a href="https://api.whatsapp.com/send/?phone=525550985327&text&type=phone_number&app_absent=0"
+                        class="btn-whatsapp py-2 px-4 text-sm scale-95">WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Mobile Layout -->
+            <div class="md:hidden py-4">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xl font-mono font-bold text-signalYellow flex items-center gap-2">
+                        🦆 PATU_COMPU<span class="text-techBlue">.exe</span>
+                    </span>
+                    <a href="https://api.whatsapp.com/send/?phone=525550985327&text&type=phone_number&app_absent=0"
+                        class="btn-nav-fixed">WhatsApp</a>
+                </div>
+                <!-- Scrollbar Navigation -->
+                <div class="mobile-nav-scroll text-sm font-medium border-t border-metalGrey/20 pt-2">
+                    <a href="#philosophy" class="hover:text-signalYellow">Filosofía</a>
+                    <a href="#services" class="hover:text-signalYellow">Servicios</a>
+                    <a href="#diagnostics" class="hover:text-signalYellow">Rendimiento</a>
+                    <a href="#location" class="hover:text-signalYellow">Localización</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero-pattern relative overflow-hidden py-24 lg:py-40">
+        <canvas id="hero-sky-canvas"></canvas>
+        <div id="hero-glow-element" class="hero-glow-bg"></div>
+        <div class="duck-pattern top-10 left-10">🦆<i data-lucide="monitor" class="inline w-6 h-6 ml-1"></i></div>
+        <div class="duck-pattern bottom-20 right-1/4">🦆<i data-lucide="smartphone" class="inline w-6 h-6 ml-1"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div
+                        class="inline-flex items-center bg-techBlue/20 text-techBlue px-4 py-1 rounded-full text-sm font-mono font-bold mb-6 border border-techBlue/30 shadow-lg backdrop-blur-sm">
+                        <span class="mr-2 animate-pulse w-2 h-2 bg-techBlue rounded-full"></span> <span>Servicio Técnico
+                            Experto</span>
+                    </div>
+                    <div
+                        class="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-6 mb-8 text-center sm:text-left">
+                        <!-- Mobile/Small Screen Profile Photo (Visible only up to lg) -->
+                        <div class="lg:hidden flex-shrink-0">
+                            <img src="assets/F099978A-A4A3-472C-B596-2FE5CCEB7C6C copy.jpg"
+                                alt="Jose - Ingeniería e Informática"
+                                class="w-28 h-28 rounded-full border-4 border-techBlue shadow-[0_0_20px_rgba(0,123,255,0.6)] object-cover">
+                        </div>
+                        <h1 class="hero-title text-4xl lg:text-6xl font-extrabold text-white leading-tight">
+                            <span id="greeting-text">Buenos días</span>, soy Jose.<br>
+                            <span class="hero-accent text-signalYellow">Llevo más de 20 años</span> potenciando equipos.
+                        </h1>
+                    </div>
+                    <div class="hero-desc space-y-6 text-lg text-gray-400 mb-10 max-w-2xl leading-relaxed">
+                        <p>
+                            Mi trabajo es quitarte ese peso de encima. Me dedico a darles una <span
+                                class="hero-highlight text-white font-bold bg-white/10 px-1 rounded">vida nueva a tus
+                                dispositivos
+                                actuales</span> para que vuelvan a ser rápidos, evitando el gasto de comprar hardware
+                            nuevo cuando aún podemos sacarle el máximo rendimiento.
+                        </p>
+                        <p>
+                            Como <span class="hero-highlight-tech text-techBlue font-bold">Ingeniero en Software con
+                                formación en
+                                Psicología</span>, entiendo que la tecnología debe adaptarse a tu ritmo. Por eso, además
+                            de reparar, diseño sistemas digitales que organizan tu flujo diario y blindan tu privacidad.
+                        </p>
+                        <p>
+                            Soluciones informáticas con un
+                            <span class="badge-express inline-block mt-1">tiempo de respuesta express</span> y a un
+                            <span class="badge-price inline-block mt-1">precio económico y justo</span>. Recupera la
+                            tranquilidad de herramientas que funcionan.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-800">
+                        <a href="https://api.whatsapp.com/send/?phone=525550985327&text=Hola Jose, vi tu página web y necesito ayuda con mi equipo.&type=phone_number&app_absent=0"
+                            class="btn-whatsapp px-8 py-4 text-lg">
+                            <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> Mensaje Directo
+                        </a>
+                        <a href="#services"
+                            class="text-gray-400 hover:text-white px-8 py-4 text-lg text-center transition-colors flex items-center justify-center border border-gray-700 rounded-md hover:bg-gray-800">
+                            Ver Servicios
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative reveal hidden lg:block perspective-1000">
+                    <!-- Tech Stock Image Background Element -->
+                    <div
+                        class="absolute inset-0 z-0 transform translate-x-12 translate-y-12 opacity-80 rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Placa base de computadora e ingeniería de software"
+                            class="w-full h-full object-cover filter brightness-50 contrast-125" fetchpriority="high">
+                        <div class="absolute inset-0 bg-gradient-to-t from-carbon to-transparent"></div>
+                    </div>
+
+                    <!-- Profile Photo with Glow -->
+                    <div class="absolute -top-16 -left-8 z-20">
+                        <img src="assets/F099978A-A4A3-472C-B596-2FE5CCEB7C6C copy.jpg"
+                            alt="Jose - Ingeniería e Informática"
+                            class="w-32 h-32 rounded-full border-4 border-techBlue shadow-[0_0_30px_rgba(0,123,255,0.8)] object-cover float-duck">
+                    </div>
+
+                    <div
+                        class="terminal-log p-6 font-mono text-sm relative z-10 transform -translate-x-4 -rotate-2 hover:rotate-0 transition-transform duration-500 hover:shadow-techBlue/20 hover:shadow-2xl">
+                        <div class="flex items-center space-x-2 mb-4 border-b border-gray-800 pb-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-gray-500 text-xs ml-2">system_diagnostic.log</span>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="text-white">> Iniciando diagnóstico...</p>
+                            <p class="text-white">> Detectando hardware: CPU [OK], <span
+                                    class="text-red-500 font-bold">RAM [CRITICAL]</span></p>
+                            <p class="text-white">> Analizando temperatura... <span class="text-orange-500">85°C
+                                    (Alto)</span></p>
+                            <p class="text-techBlue">> Solución recomendada: Limpieza + Pasta Térmica + Upgrade</p>
+                            <p class="text-signalYellow animate-pulse">> Esperando confirmación de usuario_...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="philosophy" class="py-24 section-bg">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2
+                    class="philosophy-title text-3xl md:text-5xl font-black mb-8 uppercase tracking-tighter text-dynamic leading-none">
+                    "Si no puedes usarlo como lo necesitas, <br class="hidden md:block">
+                    <span class="sovereignty-gradient-text text-4xl md:text-6xl">no es tuyo."</span>
+                </h2>
+                <div class="h-2 w-24 accent-line mx-auto mb-12"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start reveal">
+                <div class="space-y-6 text-xl text-dynamic-secondary leading-relaxed">
+                    <p class="font-bold text-dynamic">
+                        La industria tecnológica está diseñada para que sientas que tu equipo "caduca" cada tres años.
+                    </p>
+                    <p>
+                        Te condicionan a pagar suscripciones eternas y a tirar a la basura computadoras que aún tienen
+                        un potencial enorme. Yo estoy aquí para <span
+                            class="bg-signalYellow/20 px-2 py-1 font-bold text-dynamic">romper ese ciclo.</span>
+                    </p>
+                    <p>
+                        Mi trabajo se basa en el <span
+                            class="text-techBlue font-extrabold uppercase tracking-widest">Derecho a Reparar</span>: esa
+                        libertad de abrir, mejorar y optimizar lo que ya compraste.
+                    </p>
+                </div>
+
+                <div class="philosophy-card space-y-6">
+                    <h3 class="text-2xl font-bold text-dynamic mb-4">Configuraciones "Anti-Expiratorias"</h3>
+                    <p class="text-dynamic-secondary">
+                        Esto significa que una computadora que hoy se siente lenta, puede volver a ser veloz por una
+                        fracción de lo que cuesta una nueva.
+                    </p>
+                    <div class="bg-whiteSmoke p-6 rounded-xl border border-metalGrey/10">
+                        <div class="flex justify-between items-center mb-4">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="shopping-cart" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-sm font-mono uppercase text-gray-500">Comprar Laptop Nueva
+                                    Básica</span>
+                            </div>
+                            <span class="price-tag-bad">+$8,000 MXN</span>
+                        </div>
+                        <div
+                            class="flex justify-between items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="zap" class="w-5 h-5 text-techBlue"></i>
+                                <span
+                                    class="text-xs md:text-sm font-mono uppercase text-techBlue font-extrabold tracking-wide">Optimización
+                                    Patu Compu 🦆</span>
+                            </div>
+                            <span class="price-tag-good text-right">~$500 MXN</span>
+                        </div>
+                    </div>
+                    <p class="text-sm font-bold italic text-dynamic">
+                        Te devuelve un equipo que vuela y que no te impide comenzar a trabajar. No permitas que empresas
+                        te sigan rentando tu propia satisfacción.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-20 philosophy-card reveal">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="text-6xl">🎓</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-dynamic mb-3">Cursos y Talleres Prácticos</h3>
+                        <p class="text-dynamic-secondary leading-relaxed">
+                            Además de mis servicios técnicos, te enseño a dominar herramientas de <span
+                                class="font-bold text-techBlue">software libre universal y de industria</span>.
+                            Aprenderás a configurar tus propios sistemas, a proteger tu privacidad y a sacarle provecho
+                            a tus intereses personales sin depender de licencias costosas o actualizaciones forzadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sovereignty-banner reveal mt-24">
+                <h2
+                    class="sovereignty-text text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-dynamic">
+                    Recupera la soberanía de tu tecnología:<br>
+                    <span class="sovereignty-gradient-text text-4xl md:text-6xl">menos gastos hormiga, más potencia
+                        real.</span>
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Service 1 -->
+                <div class="card p-10 border-b-4 border-techBlue hover:shadow-xl transition-all reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-5xl">🦆</span>
+                        <div class="p-3 bg-techBlue/10 text-techBlue rounded-xl">
+                            <i data-lucide="wrench" class="w-10 h-10"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-dynamic">Reparación & Diagnóstico</h3>
+                    <p class="text-dynamic-secondary">Identifico la falla exacta de tu equipo (pantallazos azules,
+                        reinicios,
+                        lentitud) y la soluciono con precisión en <span class="font-bold">Windows y MacOS</span>.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="card p-10 border-b-4 border-green-500 hover:shadow-xl transition-all reveal">
+                    <div class="mb-6 inline-block p-4 bg-green-500/10 text-green-500 rounded-2xl">
+                        <i data-lucide="recycle" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-dynamic">Modernización (Upgrades)</h3>
+                    <p class="text-dynamic-secondary">Reciclo y vuelvo a modernizar ordenadores viejos o lentos, con
+                        baterías
+                        defectuosas o pantallas rotas. A favor del <span class="font-bold">Right To Repair</span>.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="card p-10 border-b-4 border-signalYellow hover:shadow-xl transition-all reveal">
+                    <div class="mb-6 inline-block p-4 bg-signalYellow/20 text-yellow-600 rounded-2xl">
+                        <i data-lucide="cpu" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-dynamic">Ensamblaje & Gestión</h3>
+                    <p class="text-dynamic-secondary">Equipos para trabajo y creación de contenido. Gestión de
+                        colecciones
+                        personales (fotos, música) y controles parentales avanzados.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="card p-10 border-b-4 border-orange-500 hover:shadow-xl transition-all reveal">
+                    <div class="mb-6 inline-block p-4 bg-orange-500/10 text-orange-500 rounded-2xl">
+                        <i data-lucide="thermometer" class="w-12 h-12"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-dynamic">Mantenimiento Preventivo</h3>
+                    <p class="text-dynamic-secondary">Limpieza física extrema para equipos que se apagan de golpe por
+                        sobrecalentamiento o fallos a mitad de jornada.</p>
+                </div>
+
+                <!-- Special Service: Nocturna -->
+                <div class="card-dark p-10 shadow-2xl border-l-8 border-signalYellow md:col-span-2 reveal">
+                    <div class="flex flex-col md:flex-row items-center gap-10">
+                        <div class="float-duck p-6 bg-white/5 rounded-full border border-white/10 text-signalYellow">
+                            <i data-lucide="moon" class="w-16 h-16"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold mb-4 text-signalYellow">Atención Nocturna Preferencial</h3>
+                            <p class="text-gray-400 text-lg">Servicio de urgencia con política preferencial para casos
+                                críticos que requieren atención en tiempo récord (24h).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-24 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold text-dynamic">Así es como trabajo</h2>
+                <p class="text-dynamic-secondary mt-4 text-lg">Transparencia total. Sin letras pequeñas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center relative">
+                <!-- Connecting Line (Desktop) -->
+                <div
+                    class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -z-10 transform -translate-y-1/2">
+                </div>
+
+                <!-- Step 1 -->
+                <div class="card p-8 relative reveal">
+                    <div
+                        class="w-16 h-16 bg-carbon text-white rounded-full flex items-center justify-center text-2xl font-mono font-bold mx-auto mb-6 shadow-lg">
+                        1</div>
+                    <h3 class="text-xl font-bold text-techBlue mb-3">Diagnóstico Técnico</h3>
+                    <p class="text-dynamic-secondary">Recibo tu equipo y analizo el problema a fondo. No adivino,
+                        diagnostico.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="card p-8 relative reveal">
+                    <div
+                        class="w-16 h-16 bg-carbon text-white rounded-full flex items-center justify-center text-2xl font-mono font-bold mx-auto mb-6 shadow-lg">
+                        2</div>
+                    <h3 class="text-xl font-bold text-techBlue mb-3">Presupuesto Cerrado</h3>
+                    <p class="text-dynamic-secondary">Te explico qué piezas se necesitan y el costo final antes de tocar
+                        un
+                        tornillo.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="card p-8 relative reveal">
+                    <div
+                        class="w-16 h-16 bg-signalYellow text-carbon rounded-full flex items-center justify-center text-2xl font-mono font-bold mx-auto mb-6 shadow-lg">
+                        3</div>
+                    <h3 class="text-xl font-bold text-techBlue mb-3">Entrega y Garantía</h3>
+                    <p class="text-dynamic-secondary">Te entrego el equipo probado, limpio y con garantía sobre el
+                        trabajo
+                        realizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="py-24 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-dynamic mb-16 reveal">¿Por qué confiarme tu equipo?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <div class="card flex flex-col items-center text-center p-8 hover:shadow-md transition-all reveal">
+                    <div class="p-5 bg-techBlue/10 text-techBlue rounded-full mb-6">
+                        <i data-lucide="history" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 text-dynamic">Experiencia Comprobada</h4>
+                    <p class="text-dynamic-secondary">Años trabajando con hardware y software de última generación.
+                        Conozco las
+                        mañas de cada sistema operativo.</p>
+                </div>
+
+                <div class="card flex flex-col items-center text-center p-8 hover:shadow-md transition-all reveal">
+                    <div class="p-5 bg-green-500/10 text-green-500 rounded-full mb-6">
+                        <i data-lucide="pen-tool" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 text-dynamic">Herramientas de Precisión</h4>
+                    <p class="text-dynamic-secondary">Uso alcohol isopropílico, pulseras antiestáticas y pasta térmica
+                        de
+                        calidad. Cero improvisación.</p>
+                </div>
+
+                <div class="card flex flex-col items-center text-center p-8 hover:shadow-md transition-all reveal">
+                    <div class="p-5 bg-signalYellow/20 text-yellow-600 rounded-full mb-6">
+                        <i data-lucide="users" class="w-12 h-12"></i>
+                    </div>
+                    <h4 class="font-bold text-xl mb-4 text-dynamic">Trato Directo</h4>
+                    <p class="text-dynamic-secondary">Hablas directamente con el técnico que abrirá tu máquina. Sin
+                        recepcionistas ni intermediarios que no saben del tema.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnostics Visualizer (With Atmospheric Image) -->
+    <section id="diagnostics" class="py-24 bg-carbon text-white relative">
+        <div
+            class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/90 to-carbon z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl font-extrabold mb-8 text-signalYellow">¿Por qué tu PC se siente lenta?</h2>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        No solo es el hardware. Es el <span class="text-techBlue">bloatware</span>, el rastreo nativo
+                        del SO y la RAM insuficiente. Mi intervención es integral: optimización de software + potencia
+                        física.
+                    </p>
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="flex items-center gap-3"><span class="text-red-500">●</span> Disco Duro Tradicional
+                            (Lento/Ruidoso)</div>
+                        <div class="flex items-center gap-3"><span class="text-techBlue">●</span> Unidad Estado Sólido
+                            (Silencioso/Instantáneo)</div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-2xl reveal">
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button id="simBtn" onclick="animatePerformance()" class="btn-yellow w-full py-4 text-lg">
+                            Simular Prueba de Velocidad
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location / Map Section -->
+    <section id="location" class="py-24 section-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl font-bold mb-4 text-dynamic">Localiza tu Solución Digital</h2>
+            <p class="text-dynamic-secondary mb-12">Atención profesional en un entorno controlado y seguro.</p>
+
+            <div class="bg-white p-4 rounded-3xl shadow-xl overflow-hidden border border-metalGrey/20">
+                <div class="aspect-video w-full rounded-2xl bg-gray-100 flex items-center justify-center relative">
+                    <!-- Google Maps Embed con coordenadas exactas: 17.959495, -92.971380 -->
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?q=17.959495,-92.971380&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="mt-12 flex flex-col items-center gap-8 font-mono">
+                <div class="flex flex-col items-center gap-3">
+                    <div class="flex items-center gap-3 text-lg md:text-xl font-bold">
+                        <span class="text-signalYellow text-2xl">📍</span>
+                        <span>Calle Dracena, Fracc Palma Real, Villahermosa</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">Sobre carretera Luis Gil Pérez</p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=525550985327&text&type=phone_number&app_absent=0"
+                    class="btn-whatsapp px-12">
+                    ¿Cómo llegar? WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-carbon text-white py-12 border-t border-metalGrey/20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-xl font-mono font-bold text-signalYellow">PATU_COMPU // 2026</span>
+            <p class="text-gray-500 mt-4 text-sm font-mono uppercase tracking-widest">Profesionista en Informática
+                Orientado al Software</p>
+        </div>
+    </footer>
+
+    <script src="hero-canvas.js"></script>
+    <script src="main.js" defer></script>
+</body>
+
+</html>

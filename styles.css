@@ -1,0 +1,757 @@
+/* ============================================================
+   PATU COMPU — Unified Dynamic Theme System
+   
+   AXIS 1: Time-of-Day → time-morning | time-afternoon | time-night
+   AXIS 2: Aesthetic    → (default) | aesthetic-experimental
+   
+   These are INDEPENDENT toggles. All 6 combos are supported.
+   ============================================================ */
+
+/* === BASE RESET & TRANSITIONS === */
+body {
+    overflow-x: hidden;
+    transition: background 1s ease, color 0.5s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+/* ============================================================
+   DEFAULT AESTHETIC — "Reliable / Confiable"
+   Original dark-tech design with subtle gradients.
+   ============================================================ */
+
+/* --- MORNING (Default) --- */
+body.time-morning {
+    background: linear-gradient(180deg, #FFFDF5 0%, #FFF8E1 30%, #F2F2F7 100%);
+    color: #1C1C1E;
+}
+
+body.time-morning .section-bg {
+    background: transparent;
+}
+
+body.time-morning .card {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 215, 0, 0.15);
+    color: #1C1C1E;
+    backdrop-filter: blur(10px);
+}
+
+body.time-morning .card-dark {
+    background: rgba(28, 28, 30, 0.95);
+    color: #f2f2f7;
+}
+
+body.time-morning .text-dynamic {
+    color: #1C1C1E;
+}
+
+body.time-morning .text-dynamic-secondary {
+    color: #555;
+}
+
+body.time-morning .accent-line {
+    background-color: #FFA751;
+}
+
+body.time-morning .philosophy-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-left-color: #007BFF;
+}
+
+.greeting-morning {
+    background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease;
+}
+
+/* --- AFTERNOON (Default) --- */
+body.time-afternoon {
+    background: linear-gradient(180deg, #1C1C1E 0%, #2a1520 30%, #1a1025 100%);
+    color: #f2f2f7;
+}
+
+body.time-afternoon .section-bg {
+    background: transparent;
+}
+
+body.time-afternoon .card {
+    background: rgba(42, 21, 32, 0.6);
+    border-color: rgba(238, 9, 121, 0.15);
+    color: #f2f2f7;
+    backdrop-filter: blur(10px);
+}
+
+body.time-afternoon .card-dark {
+    background: rgba(10, 10, 12, 0.9);
+    color: #f2f2f7;
+}
+
+body.time-afternoon .text-dynamic {
+    color: #f2f2f7;
+}
+
+body.time-afternoon .text-dynamic-secondary {
+    color: #c0b0b8;
+}
+
+body.time-afternoon .accent-line {
+    background-color: #EE0979;
+}
+
+body.time-afternoon .philosophy-card {
+    background: rgba(42, 21, 32, 0.6);
+    border-left-color: #EE0979;
+}
+
+.greeting-afternoon {
+    background: linear-gradient(135deg, #FF6A00 0%, #EE0979 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease;
+}
+
+/* --- NIGHT (Default) --- */
+body.time-night {
+    background: linear-gradient(180deg, #0a0a0f 0%, #0d1117 30%, #0c0c0e 100%);
+    color: #f2f2f7;
+}
+
+body.time-night .section-bg {
+    background: transparent;
+}
+
+body.time-night .card {
+    background: rgba(20, 25, 35, 0.7);
+    border-color: rgba(0, 123, 255, 0.15);
+    color: #f2f2f7;
+    backdrop-filter: blur(10px);
+}
+
+body.time-night .card-dark {
+    background: rgba(5, 5, 8, 0.95);
+    color: #f2f2f7;
+}
+
+body.time-night .text-dynamic {
+    color: #f2f2f7;
+}
+
+body.time-night .text-dynamic-secondary {
+    color: #a0a4b0;
+}
+
+body.time-night .accent-line {
+    background-color: #007BFF;
+}
+
+body.time-night .philosophy-card {
+    background: rgba(20, 25, 35, 0.7);
+    border-left-color: #007BFF;
+}
+
+.greeting-night {
+    background: linear-gradient(135deg, #667eea 0%, #D1D1D6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease;
+}
+
+
+/* ============================================================
+   EXPERIMENTAL AESTHETIC — "Azul Cielo / Amarillo / Gris"
+   Inspired by lo-fi anime sky art. Dreamy and pastel.
+   Corporate palette: #7EC8E3, #FFD700, #8E8E93
+   ============================================================ */
+
+/* --- MORNING (Experimental) --- */
+body.aesthetic-experimental.time-morning {
+    background: linear-gradient(180deg, #E3F2FD 0%, #B3E5FC 35%, #FFF9C4 100%);
+    color: #2c3e50;
+}
+
+body.aesthetic-experimental.time-morning .card {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(126, 200, 227, 0.3);
+    color: #2c3e50;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(126, 200, 227, 0.1);
+}
+
+body.aesthetic-experimental.time-morning .card-dark {
+    background: rgba(44, 62, 80, 0.9);
+    color: #ecf0f1;
+}
+
+body.aesthetic-experimental.time-morning .text-dynamic {
+    color: #111827;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+body.aesthetic-experimental.time-morning .text-dynamic-secondary {
+    color: #374151;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+body.aesthetic-experimental.time-morning .accent-line {
+    background: linear-gradient(90deg, #7EC8E3, #FFD700);
+}
+
+body.aesthetic-experimental.time-morning .philosophy-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-left-color: #7EC8E3;
+}
+
+/* Experimental Hero Legibility Overrides (Morning Only) */
+body.aesthetic-experimental.time-morning .hero-title {
+    color: #111827;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+body.aesthetic-experimental.time-morning .hero-accent {
+    color: #b45309;
+    /* Darker golden/orange for better contrast on light */
+}
+
+body.aesthetic-experimental.time-morning .hero-desc {
+    color: #374151;
+    /* Dark slate gray instead of light gray 400 */
+    font-weight: 500;
+}
+
+body.aesthetic-experimental.time-morning .hero-highlight {
+    background-color: #0369a1;
+    /* High contrast blue box */
+    color: #ffffff;
+}
+
+body.aesthetic-experimental.time-morning .hero-highlight-tech {
+    color: #1d4ed8;
+}
+
+body.aesthetic-experimental.time-morning .badge-express {
+    background: rgba(180, 83, 9, 0.9);
+    /* Dark Amber */
+    color: #ffffff;
+    border-color: rgba(180, 83, 9, 1);
+}
+
+body.aesthetic-experimental.time-morning .badge-price {
+    background: rgba(21, 128, 61, 0.9);
+    /* Deep Green */
+    color: #ffffff;
+    border-color: rgba(21, 128, 61, 1);
+}
+
+body.aesthetic-experimental.time-morning .sovereignty-gradient-text {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
+}
+
+/* --- AFTERNOON (Experimental) --- */
+body.aesthetic-experimental.time-afternoon {
+    background: linear-gradient(180deg, #2D1B69 0%, #4A3080 35%, #7EC8E3 100%);
+    color: #e8e0f0;
+}
+
+/* Experimental Hero Legibility Overrides (Afternoon Only) */
+body.aesthetic-experimental.time-afternoon .hero-title,
+body.aesthetic-experimental.time-afternoon .hero-highlight-tech {
+    color: #ffffff;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+body.aesthetic-experimental.time-afternoon .hero-accent {
+    color: #FFD700;
+}
+
+body.aesthetic-experimental.time-afternoon .hero-desc {
+    color: #f3f4f6;
+    font-weight: 500;
+}
+
+body.aesthetic-experimental.time-afternoon .badge-express {
+    background: rgba(255, 215, 0, 0.9);
+    color: #111827;
+    border-color: rgba(255, 215, 0, 1);
+}
+
+body.aesthetic-experimental.time-afternoon .badge-price {
+    background: rgba(37, 211, 102, 0.9);
+    color: #111827;
+    border-color: rgba(37, 211, 102, 1);
+}
+
+body.aesthetic-experimental.time-afternoon .sovereignty-gradient-text,
+body.aesthetic-experimental.time-night .sovereignty-gradient-text {
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.9)) drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+}
+
+body.aesthetic-experimental.time-afternoon .card {
+    background: rgba(74, 48, 128, 0.5);
+    border-color: rgba(126, 200, 227, 0.2);
+    color: #e8e0f0;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(45, 27, 105, 0.2);
+}
+
+body.aesthetic-experimental.time-afternoon .card-dark {
+    background: rgba(20, 10, 50, 0.9);
+    color: #e8e0f0;
+}
+
+body.aesthetic-experimental.time-afternoon .text-dynamic {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+body.aesthetic-experimental.time-afternoon .text-dynamic-secondary {
+    color: #f3f4f6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+body.aesthetic-experimental.time-afternoon .accent-line {
+    background: linear-gradient(90deg, #CE93D8, #FFD700);
+}
+
+body.aesthetic-experimental.time-afternoon .philosophy-card {
+    background: rgba(74, 48, 128, 0.5);
+    border-left-color: #CE93D8;
+}
+
+/* --- NIGHT (Experimental) --- */
+body.aesthetic-experimental.time-night {
+    background: linear-gradient(180deg, #0B0B2B 0%, #1A1A4E 35%, #2D2D7A 100%);
+    color: #d0d4e8;
+}
+
+body.aesthetic-experimental.time-night .card {
+    background: rgba(26, 26, 78, 0.6);
+    border-color: rgba(126, 200, 227, 0.15);
+    color: #d0d4e8;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(11, 11, 43, 0.3);
+}
+
+body.aesthetic-experimental.time-night .card-dark {
+    background: rgba(5, 5, 20, 0.95);
+    color: #d0d4e8;
+}
+
+body.aesthetic-experimental.time-night .text-dynamic {
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+body.aesthetic-experimental.time-night .text-dynamic-secondary {
+    color: #e5e7eb;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+body.aesthetic-experimental.time-night .accent-line {
+    background: linear-gradient(90deg, #7EC8E3, #3F51B5);
+}
+
+body.aesthetic-experimental.time-night .philosophy-card {
+    background: rgba(26, 26, 78, 0.6);
+    border-left-color: #7EC8E3;
+}
+
+/* Experimental Hero Overrides */
+body.aesthetic-experimental .hero-pattern {
+    background-color: transparent;
+    background-image: none;
+}
+
+body.aesthetic-experimental .hero-glow-bg {
+    display: none;
+}
+
+/* Experimental Canvas */
+#hero-sky-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+body.aesthetic-experimental #hero-sky-canvas {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   SHARED COMPONENT STYLES (State-Agnostic)
+   ============================================================ */
+
+/* Cards */
+.card {
+    transition: background 0.8s ease, border-color 0.8s ease, color 0.5s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.card-dark {
+    transition: background 0.8s ease, color 0.5s ease;
+    border-radius: 1rem;
+}
+
+/* Hero */
+.hero-pattern {
+    background-color: #1C1C1E;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    position: relative;
+    transition: all 1s ease;
+}
+
+.hero-glow-bg {
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 120%;
+    height: 150%;
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+    transition: background 1.5s ease-in-out;
+}
+
+.hero-glow-morning {
+    background: radial-gradient(circle at 60% 30%, rgba(255, 183, 94, 0.2), transparent 55%);
+}
+
+.hero-glow-afternoon {
+    background: radial-gradient(circle at 60% 30%, rgba(238, 9, 121, 0.15), transparent 55%);
+}
+
+.hero-glow-night {
+    background: radial-gradient(circle at 60% 30%, rgba(0, 123, 255, 0.15), transparent 55%);
+}
+
+.duck-pattern {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Chart */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+/* Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.float-duck {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* Icon animations (smooth floating for lucide icons and large emojis inside cards/sections) */
+.card i[data-lucide],
+.philosophy-card i[data-lucide],
+.card .text-5xl,
+.philosophy-card .text-6xl {
+    animation: icon-float 5s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Buttons */
+.btn-yellow {
+    background-color: #FFD700;
+    color: #1C1C1E;
+    font-weight: 800;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-yellow:hover {
+    background-color: #ffed4a;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(255, 215, 0, 0.3);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    font-weight: 800;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+    background-color: #20ba5a;
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+}
+
+.btn-nav-fixed {
+    background-color: #25D366;
+    color: white;
+    font-weight: 800;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Terminal */
+.terminal-log {
+    background: rgba(10, 25, 47, 0.95);
+    border: 1px solid rgba(142, 142, 147, 0.3);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: terminal-float 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes terminal-float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-8px) scale(1.01);
+    }
+}
+
+/* Unified Highlight Badges */
+.badge-highlight {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+
+.badge-express {
+    background: rgba(255, 215, 0, 0.15);
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.badge-price {
+    background: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.badge-tech {
+    background: rgba(0, 123, 255, 0.12);
+    color: #007BFF;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.badge-warning {
+    background: rgba(255, 215, 0, 0.12);
+    color: #1C1C1E;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Keeping old classes as aliases */
+.highlight-express {
+    background: rgba(255, 215, 0, 0.15);
+    color: #FFD700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    font-weight: 800;
+}
+
+.highlight-price {
+    background: rgba(37, 211, 102, 0.15);
+    color: #25D366;
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    font-weight: 800;
+}
+
+/* Mobile Nav */
+.mobile-nav-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.mobile-nav-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Theme Toggle */
+.theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(142, 142, 147, 0.3);
+    background: rgba(28, 28, 30, 0.5);
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(15deg) scale(1.1);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+/* Aesthetic Toggle */
+.aesthetic-toggle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(126, 200, 227, 0.3);
+    background: rgba(126, 200, 227, 0.1);
+    font-size: 14px;
+}
+
+.aesthetic-toggle-btn:hover {
+    transform: scale(1.15);
+    background: rgba(126, 200, 227, 0.25);
+    box-shadow: 0 0 12px rgba(126, 200, 227, 0.3);
+}
+
+body.aesthetic-experimental .aesthetic-toggle-btn {
+    border-color: rgba(255, 215, 0, 0.5);
+    background: rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+/* Sovereignty Banner */
+.sovereignty-banner {
+    padding: 3rem 1rem;
+    text-align: center;
+    margin: 4rem 0;
+    border-top: 3px solid rgba(142, 142, 147, 0.1);
+    border-bottom: 3px solid rgba(142, 142, 147, 0.1);
+}
+
+.sovereignty-gradient-text {
+    background: linear-gradient(135deg, #FFD700 0%, #007BFF 50%, #25D366 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Philosophy Card */
+.philosophy-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 8px solid #007BFF;
+    padding: 2.5rem;
+    border-radius: 0 1.5rem 1.5rem 0;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+    transition: background 0.8s ease, border-color 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Price Tags */
+.price-tag-bad {
+    color: #ef4444;
+    text-decoration: line-through;
+    font-weight: 800;
+}
+
+.price-tag-good {
+    color: #25D366;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-shadow: 0 0 10px rgba(37, 211, 102, 0.3);
+}
